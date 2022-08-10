@@ -1,11 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
-</template>
+  <MenuLateral/>
+  <main class="main-content position-relative border-radius-lg ">
+    <NavBar/>
+    <div class="container-fluid py-4">
+      <CardGrafc/>
+    </div>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav>
+    <router-view/>
+  </main>
 
+</template>
+<script>
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
+import NavBar from './components/NavBar'
+import MenuLateral from './components/MenuLateral'
+import CardGrafc from './components/CardGrafc'
+export default {
+  name: 'HomeView',
+  components: {
+    HelloWorld, NavBar, MenuLateral, CardGrafc
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
